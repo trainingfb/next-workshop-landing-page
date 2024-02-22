@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+NEXT 14: esploriamo tutte le novità creando un sito web
 
-## Getting Started
+In questa masterclass creiamo una sito web per esplorare alcune delle più importanti funzionalità di Next 14.x:
 
-First, run the development server:
+* Creare applicazioni multi pagina con App Router
+* Client Components vs React Server Components
+* Dynamic & Static Rendering (SSR, ISG, SSG)
+* Gestione loader e errori
+* RSC e comunicazione con REST API 
+* Ottimizzazione performance delle pagine, skeletons e HTML streaming 
+* Form e Server Actions
+* differenti strategie per la gestione di stati globali
+* Ottimizzazione assets: immagini, css, fonts
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+BONUS
+Tempo permettendo, creeeremo la pagina per gestire un semplice negozio on-line in cui:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* sfruttiamo SSR per generare la lista dei prodotti
+* sarà possibile effettuare ricerche server-side, senza refresh, sfruttando le funzionalità di streaming 
+* generare le pagine del catalogo sia dinamicamente (SSR) che in modo statico (SSG)
+* creare un carrello della spesa globale 
