@@ -1,21 +1,7 @@
 // components/core/navbar.tsx
-'use client';
-
-import { useCart } from '@/store/cart.store';
-import { LanguageContext } from '@/store/LanguageContextProvider';
-import { ProfileContext } from '@/store/ProfileContextProvider';
-import clsx from 'clsx';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useContext } from 'react';
 
 export default function Navbar() {
-  const pathname = usePathname()
-
-  /*NEW*/
-  const totalCartItems = useCart(state => state.list.length)
-  const { language } = useContext(LanguageContext);
-  const { state, dispatch } = useContext(ProfileContext);
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -59,10 +45,7 @@ export default function Navbar() {
                 <Link
                   href="/"
                   aria-current="page"
-                  className={clsx(
-                    { 'active': pathname === '/' },
-                    'nav-item',
-                  )}
+                  className={'nav-item'}
                 >
                   Home
                 </Link>
@@ -70,10 +53,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/about"
-                  className={clsx(
-                    { 'active': pathname === '/about' },
-                    'nav-item',
-                  )}
+                  className={'nav-item'}
                 >
                   About
                 </Link>
@@ -81,22 +61,11 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/shop"
-                  className={clsx(
-                    { 'active': pathname.includes('/shop') },
-                    'nav-item',
-                  )}
+                  className={'nav-item'}
                 >
                   Shop
                 </Link>
               </li>
-
-              {/*NEW*/}
-
-              <li className="bg-pink-600 px-3 rounded-xl">
-                {totalCartItems} | {language === 'it' ? '🇮🇹' : '🇬🇧'}
-                - { state.email } | { state.username }
-              </li>
-
             </ul>
           </div>
         </div>

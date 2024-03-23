@@ -6,12 +6,8 @@ export async function getYouTubeVideos(): Promise<YoutubeVideo[]> {
 
   const res = await fetch(
     'https://json-server-vercel-for-tutorials.vercel.app/youtube-videos',
-    {
-      cache: 'no-store',
-      /*next: { revalidate: 5 }*/
-    }
   );
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 4000));
   return res.json();
 }

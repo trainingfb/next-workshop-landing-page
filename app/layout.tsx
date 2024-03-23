@@ -1,12 +1,8 @@
 // /app/layout.tsx
 import Navbar from '@/components/core/navbar';
-import { LanguageContextProvider } from '@/store/LanguageContextProvider';
-import { ProfileContextProvider } from '@/store/ProfileContextProvider';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +18,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <LanguageContextProvider>
-        <ProfileContextProvider>
         <body className={inter.className}>
           <Navbar/>
 
@@ -35,10 +29,6 @@ export default function RootLayout({
             Fabio Biondi | @Copyright 2024
           </footer>
         </body>
-        </ProfileContextProvider>
-      </LanguageContextProvider>
-
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js" />
 
     </html>
   );
