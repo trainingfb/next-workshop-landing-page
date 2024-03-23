@@ -1,6 +1,5 @@
 // app/page.tsx
 import { getDevToPosts } from '@/api/devto-posts.api';
-import { getYouTubeVideos } from '@/api/youtube-videos.api';
 import Newsletter from '@/components/widgets/newsletter';
 import Hero from '@/components/widgets/hero';
 import LatestPosts from '@/components/widgets/latest-posts';
@@ -12,24 +11,24 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="">
+      <div>
         <Hero />
       </div>
 
-      <div className="flex gap-6 my-6">
-        <div className="w-1/3">
+      <div className="flex gap-6 my-6 h-36">
+        <div className="w-1/3 bg-slate-700">
           <LatestVideos />
         </div>
 
-        <div className="w-1/3">
+        <div className="w-1/3 bg-slate-700">
           <LatestPosts />
         </div>
-        <div className="w-1/3">
+        <div className="w-1/3 bg-slate-700">
           <LatestVideoCourses/>
         </div>
       </div>
 
-      <div className="flex gap-6 my-6">
+      <div className="flex gap-6 my-6 bg-slate-700 h-36">
         <Newsletter/>
       </div>
     </div>
