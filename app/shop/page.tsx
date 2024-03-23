@@ -1,9 +1,6 @@
 // app/shop/page.tsx
-import { getProducts } from '@/api/products.api';
-import Link from 'next/link';
-
 export default async function Shop() {
-  const products: any[] = []
+  const products: any[] = [{ id: 1, name: 'one'}, { id: 2, name: 'two'}]
 
   return (
     <div>
