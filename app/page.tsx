@@ -28,7 +28,7 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="flex gap-6 my-6 bg-slate-700 h-36">
+      <div className="flex gap-6 my-6 bg-slate-700 h-48">
         <Newsletter/>
       </div>
     </div>
