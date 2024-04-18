@@ -93,8 +93,10 @@ export default function Navbar() {
               {/*NEW*/}
 
               <li className="bg-pink-600 px-3 rounded-xl">
-                {totalCartItems} | {language === 'it' ? '🇮🇹' : '🇬🇧'}
-                - { state.email } | { state.username }
+                <Link href="/demo-context">
+                  {totalCartItems} | {language === 'it' ? '🇮🇹' : '🇬🇧'}
+                  - { state.email } | { state.username }
+                </Link>
               </li>
 
             </ul>
