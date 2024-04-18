@@ -5,7 +5,6 @@ import { DeleteForm } from '@/app/demo-server-actions/_components/DeleteForm';
 import { SimpleTodosList } from '@/app/demo-server-actions/_components/SimpleTodosList';
 import { getTodos } from '@/app/demo-server-actions/actions';
 
-
 export default async function Home() {
   let todos = await getTodos()
 

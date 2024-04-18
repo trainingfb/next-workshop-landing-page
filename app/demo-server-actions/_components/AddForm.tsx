@@ -1,3 +1,5 @@
+// app/demo-server-actions/_components/AddForm.tsx
+
 "use client";
 
 import { createTodo } from '@/app/demo-server-actions/actions';
@@ -6,6 +8,7 @@ import { useFormStatus } from "react-dom";
 
 const initialState = {
   message: "",
+  status: 0
 };
 
 function SubmitButton() {
@@ -22,7 +25,7 @@ export function AddForm() {
 
   return (
     <form action={formAction}>
-
+      {state.status}
       <div className="flex gap-3">
         <input type="text" name="title" required defaultValue="" className="text-black"/>
         <SubmitButton />

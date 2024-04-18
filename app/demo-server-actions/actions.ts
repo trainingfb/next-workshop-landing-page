@@ -25,7 +25,8 @@ export async function getTodos(): Promise<Todo[]> {
 
 export async function createTodo(
   prevState: {
-    message: string;
+    message: string,
+    status: number
   },
   formData: FormData,
 ) {
@@ -38,7 +39,7 @@ export async function createTodo(
 
 
   if (!parse.success) {
-    return { message: "Input is not valid!" };
+    return { message: "Input is not valid!", status: 0 };
   }
 
   const data = parse.data;
@@ -59,7 +60,7 @@ export async function createTodo(
     }
 
     revalidatePath("/");
-    return { message: `Added todo ${data.title}`, status: 'ok' }
+    return { message: `Added todo ${data.title}`, status: 200 }
 
   } catch(error) {
     return { message: "Failed to create todo #2", status: 404  };
@@ -69,17 +70,18 @@ export async function createTodo(
 
 export async function deleteTodo(
   prevState: {
-    message: string;
+    message: string,
+    status: number
   },
   formData: FormData,
 ) {
   const schema = z.object({
     id: z.string().min(1),
-    //todo: z.string().min(1),
+    // todo: z.string().min(1),
   });
   const data = schema.parse({
     id: formData.get("id"),
-    //todo: formData.get("todo"),
+    // todo: formData.get("todo"),
   });
 
   try {
@@ -95,7 +97,7 @@ export async function deleteTodo(
     }
 
     revalidatePath("/");
-    return { message: `Deleted todo ${data.id}`, status: 'ok'  }
+    return { message: `Deleted todo ${data.id}`, status: 200  }
 
   } catch(error) {
     return { message: "Failed to delete todo", status: 404  };

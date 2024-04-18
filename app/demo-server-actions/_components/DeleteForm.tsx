@@ -1,9 +1,9 @@
+// app/demo-server-actions/_components/DeleteForm.tsx
+
 "use client";
 
 import { deleteTodo } from '@/app/demo-server-actions/actions';
 import { Todo } from '@/model/todo';
-import { text } from 'node:stream/consumers';
-import { id } from 'postcss-selector-parser';
 import { useFormState, useFormStatus } from "react-dom";
 
 const initialState = {
