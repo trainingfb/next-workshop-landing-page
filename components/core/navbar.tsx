@@ -90,7 +90,18 @@ export default function Navbar() {
                 </Link>
               </li>
 
-              {/*NEW*/}
+              <li>
+                <Link
+                  href="/demo-server-actions"
+                  className={clsx(
+                    { 'active': pathname.includes('/demo-server-actions') },
+                    'nav-item',
+                  )}
+                >
+                  Server Actions
+                </Link>
+              </li>
+
 
               <li className="bg-pink-600 px-3 rounded-xl">
                 <Link href="/demo-context">

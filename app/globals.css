@@ -47,3 +47,7 @@ body {
 .nav-item.active {
   @apply border-b border-white rounded-none;
 }
+
+.simple-button {
+  @apply  rounded-xl p-1 hover:bg-opacity-50 transition
+}

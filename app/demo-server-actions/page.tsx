@@ -1,20 +1,20 @@
-// app/demo-todolist/page.tsx
+// app/demo-server-actions/page.tsx
 
-import { AddForm } from '@/app/demo-todolist/_components/AddForm';
-import { DeleteForm } from '@/app/demo-todolist/_components/DeleteForm';
-import { Users } from '@/app/demo-todolist/_components/Users';
-import { getTodos } from '@/app/demo-todolist/actions';
+import { AddForm } from '@/app/demo-server-actions/_components/AddForm';
+import { DeleteForm } from '@/app/demo-server-actions/_components/DeleteForm';
+import { SimpleTodosList } from '@/app/demo-server-actions/_components/SimpleTodosList';
+import { getTodos } from '@/app/demo-server-actions/actions';
 
-export type Todo = {
-  id: string;
-  title: string;
-}
 
 export default async function Home() {
   let todos = await getTodos()
 
   return (
     <main>
+      <SimpleTodosList />
+
+      <hr className="my-8"/>
+
       <h1 className="widget-title">TODO LIST with SERVER ACTIONS</h1>
 
       <AddForm />
@@ -30,9 +30,7 @@ export default async function Home() {
         }
       </ul>
 
-      <hr/>
 
-      <Users />
     </main>
   );
 }

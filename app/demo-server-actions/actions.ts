@@ -1,6 +1,7 @@
-// /app/demo-todolist/actions.ts
+// app/demo-server-actions/actions.ts
+
 "use server";
-import { Todo } from '@/app/demo-todolist/page';
+import { Todo } from '@/model/todo';
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 

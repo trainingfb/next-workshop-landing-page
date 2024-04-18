@@ -1,7 +1,7 @@
 "use client";
 
-import { deleteTodo } from '@/app/demo-todolist/actions';
-import { Todo } from '@/app/demo-todolist/page';
+import { deleteTodo } from '@/app/demo-server-actions/actions';
+import { Todo } from '@/model/todo';
 import { text } from 'node:stream/consumers';
 import { id } from 'postcss-selector-parser';
 import { useFormState, useFormStatus } from "react-dom";
@@ -14,7 +14,7 @@ function DeleteButton() {
   const { pending } = useFormStatus();
 
   return (
-    <button type="submit" aria-disabled={pending}>
+    <button className="simple-button bg-red-800" type="submit" aria-disabled={pending}>
       {pending ? 'loading...' : 'Delete' }
     </button>
   );
